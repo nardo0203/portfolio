@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My portfolio</title>
+  <style>
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+   
+    nav {
+      display: flex;
+      justify-content: right;
+      padding: 30px 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      background-color: transparent;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px 20px;
+      transition: color 0.3s ease;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    nav.sticky {
+      background-color: #ffffff;
+      z-index: 1;
+    }
+
+    nav.sticky a {
+        color: #000000; 
+        z-index: 2;
+    }
+    nav a:hover {
+      color: #ff1a01;
+    }
+
+    .oval-button {
+  display: inline-block;
+  background-color: #ddff93;
+  color: #000000;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.oval-button:hover {
+  background-color: rgb(0, 0, 0);
+}
+
+    section {
+      padding: 50px;
+      display: flex;
+      align-items: center;
+    }
+
+    #home {
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      background-image: url("bg.jpg");
+      background-size: cover;
+    }
+
+    #home .content {
+      flex: 1;
+      text-align: right;
+      margin-right: 20%;
+      color: #ffffff; 
+      z-index: 0;
+    }
+
+    #home h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    #home .square {
+      position: absolute;
+      width: 400px;
+      height: 600px;
+      background-color: #000000;
+      transform: translate(-50%, -50%);
+      left: 30%;
+      top: 50%;
+      z-index: 0;
+    }
+
+    #home img {
+      width: 390px;
+      height: 590px;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      left: 30%;
+    }
+    #experienced {
+      background-image: url("bg2.jpg");
+      background-size: cover;
+    }
+    .header {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+    }
+    .header h1{
+      color: white;
+    }
+ 
+    .container {
+      display: flex;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      padding-top: 100px;
+    }
+
+    .scroll{
+      display: flex;
+      margin: 0 2em;
+    }
+
+    .scroll div{
+      display: flex;
+      gap: 2em;
+      white-space: nowrap; 
+    }
+
+    .scroll p{
+      font-size: 5em;
+      color: #ffffff;
+      font-weight: bold;
+      margin-bottom: 0;
+      line-height: 10px;
+    }
+     
+    .RightToLeft{
+      animation: RightToLeft 10s infinite linear ;
+    }
+
+    @keyframes RightToLeft {
+      from{
+        transform: translateX(0%);
+      }to{
+        transform: translateX(-50%);
+      }
+    }
+
+    #description {
+      padding: 150px 50px; 
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      position: relative; 
+    }
+    .introduce {
+      position: absolute;
+      bottom: 50px;
+    }
+    #description .section {
+      width: 600px; 
+      height: 200px;
+      margin: 0 20px; 
+      position: relative; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+ 
+
+    #description .section:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    #description .section .hover-text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(0, 0, 0);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    #description .section:hover .hover-text {
+      opacity: 1;
+    }
+ 
+    #description .section:nth-child(1):hover {
+      width: 1300px;
+      height: 400px;
+      background-color: #f0f0f0;  
+    }
+    
+    #description .section:nth-child(2):hover {
+      width: 1300px;
+      height: 400px;
+      background-color: #f0f0f0;
+    }
+    
+    #description .section:nth-child(3):hover {
+      width: 1300px;
+      height: 400px;
+      background-color: #f0f0f0;
+    }
+    #description .section:nth-child(1):hover .hover-text {
+    color: white;
+    background-color: rgb(160, 0, 168);
+    }
+    #description .section:nth-child(2):hover .hover-text {
+    color: white;
+    background-color: rgb(165, 138, 0);
+    }
+    #description .section:nth-child(3):hover .hover-text {
+    color: white;
+    background-color: rgb(0, 138, 181);
+    }
+    
+    #description .section::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(128, 128, 128);
+  background-position: center;
+  z-index: -1;
+  opacity: 0.2;
+  content: "";
+  transition: background-color 0.3s ease;
+}
+
+#description .section:hover::before {
+  background-color: #f0f0f0;
+}
+
+    .hidden {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.5s, transform 0.5s;
+    }
+
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section:nth-child(1) .hidden {
+      transition-delay: 0.2s;
+    }
+
+    .section:nth-child(2) .hidden {
+      transition-delay: 0.4s;
+    }
+
+    .section:nth-child(3) .hidden {
+      transition-delay: 0.6s;
+    }
+
+    .content_pic{
+      max-width: 350px;
+      max-height: 300px;
+    }
+
+
+    #contact {
+      background-color: #f8f9fa;
+      padding: 80px 0;
+    }
+
+    .contact-details {
+      margin-top: 20px;
+    }
+
+    #contact {
+  background-color: #f8f8f8;
+  padding: 50px 0;
+}
+
+.Contact-Form {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.Contact-Form h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.Contact-Form h3 {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.input-fields {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.input-fields .input {
+  width: 40%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.msg textarea {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  resize: none;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.details {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.details h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.details p {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 767px) {
+  .input-fields {
+    flex-direction: column;
+  }
+
+  .input-fields .input {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .Contact-Form h1 {
+    font-size: 28px;
+  }
+
+  .Contact-Form h3 {
+    font-size: 18px;
+  }
+
+  .details h3 {
+    font-size: 18px;
+  }
+
+  .details p {
+    font-size: 14px;
+  }
+}
+
+  </style>
+</head>
+
+
+<body>
+  <section id="home">
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#experienced">Experience</a>
+      <a href="#description">Past Project</a>
+      <a href="#contact" class="oval-button">Contact Me</a>
+    </nav>
+    <div class="square"></div>
+    <img src="wkh.jpg" alt="Home Image">
+    <div class="content">
+      <h1>Hi, I am <br> Wong Kwun Hei</h1>
+    </div>
+  </section>
+
+  <section id="experienced">
+    <div class="header">
+      <h1>I Am Experienced In</h1>
+    </div>
+    <div class="container">
+      <div class="scroll">
+        <div class="RightToLeft">
+          <p>Python Javascript Html Css Data mining JSON Tensorflow Pytorch</p>
+          <p>Python Javascript Html Css Data mining JSON Tensorflow Pytorch</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="description">
+    <div class="section hidden expand-on-hover">
+      <span>VR Interview</span>
+      <div class="hover-text" onclick="toggleVRInterviewText()">
+        <span id="vr-interview-text"></span>
+      </div>
+    </div>
+    <div class="section hidden expand-on-hover">
+      <span>Resume Parser</span>
+      <div class="hover-text" onclick="toggleResumeParserText()">
+        <span id="resume-parser-text"></span>
+      </div>
+    </div>
+    <div class="section hidden expand-on-hover">
+      <span>Classification</span>
+      <div class="hover-text" onclick="toggleClassificationText()">
+        <span id="classification-text"></span>
+      </div>
+    </div>
+    <div class="introduce">
+      <p>Click on the blank on each box for further information!</p>
+    </div>
+  </section>
+
+<section id="contact">
+  <div class="Contact-Form">
+    <h1> Contact</h1>
+    <h3>Contact for best Design</h3>
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <div class="input-fields">
+        <input type="hidden" name="access_key" value="7ba5681a-d07e-40c7-ba89-91e84dbdf370">
+        <input type="text" name="name" class="input" placeholder="Your Name *" required>
+        <input type="text" name="email" class="input" placeholder="Your Emaill *" required>
+      </div>
+      <div class="msg">
+        <textarea name="message" placeholder="Message *" required></textarea>
+      </div>
+      <div>
+        <button type="submit"> Send message</button>
+      </div>
+    </form>
+    <div class="details">
+      <h3> Contact info </h3>
+      <p>Name: Wong Kwun Hei, Nardo</p>
+      <p> E-mail: nardo0304@gmail.com</p>
+    </div>
+  </div>	
+</section>
+
+  <script>
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        const targetId = event.target.getAttribute('href');
+        document.querySelector(targetId).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    window.addEventListener('scroll', function() {
+      const nav = document.querySelector('nav');
+      if (window.pageYOffset > 0) {
+        nav.classList.add('sticky');
+      } else {
+        nav.classList.remove('sticky');
+      }
+
+      const hiddenElements = document.querySelectorAll('.hidden');
+
+      hiddenElements.forEach(element => {
+        let elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        let scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollPosition > elementPosition - window.innerHeight * 0.75) {
+          element.classList.add('show');
+        } else {
+          element.classList.remove('show');
+        }
+      });
+    });
+
+
+  let vrInterviewTextIndex = 0;
+  const vrInterviewTexts = [
+    "\"Job Interview Simulator\" is an application for students and fresh graduates to reinforce their performance in their interviews. This project contains two sections: the interview section and pronunciation test",  
+    ` <img src=\"pic8.png\" class=\"content_pic\">
+      <p>This is the coworking office, simulating a real Office Meeting Room in Unity 3D</p>`,
+    ` <img src=\"pic9.png\" class=\"content_pic\">
+      <p>Office Staff Workplace Scene</p>`,
+    ` <img src=\"pic10.jpg\" class=\"content_pic\">
+      <p>This is the interview section, the interviewer response and question user by chatbot and contain automatic lipsync animation</p>`,
+    ` <img src=\"pic1.png\" class=\"content_pic\">
+      <p>This is the pronunciation test. This is for the accuracy test and basic knowledge check in Internet technology</p>`,
+    `<video autoplay >
+        <source src=\"interview.mp4\" type=\"video/mp4\">
+      </video>`,
+  ];
+
+  let resumeParserTextIndex = 0;
+  const resumeParserTexts = [
+    "In the early stage of final year project, my group have done some research for Resume Parser and NLP (Natural language processing)",
+    "We try to seek for extra function for our Job Interview Simluator and study NLP for a better understanding on chatbot in the simluator",
+    "We have tested serval application, one is \"Pyresparser\" from github",
+    "<p>It can divide the string into lists of substring(Tokenized), can reduce words into base form(Lemmatization). <br> Able to indicate the main verb and direct object and recognize many types of entities<p>",
+    `<img src=\"pic6.png\" class=\"content_pic\">
+    <p>This is the data Pyresparser collect</p>`,
+    `<img src=\"pic7.png\" class=\"content_pic\" style=\"width: 400px; height: 100px;\">
+    <p>And this is what it can collect from a sample resume</p>`,
+    "<p>It unable to collect college name, company and fail to collect correct name. <br>Consider our main goal, we didn't add the resume parser function, but the research about NLP, the experience and inspiration from it, helps me a lot.</p>",
+  ];
+
+  let classificationTextIndex = 0;
+  const classificationTexts = [
+    "The project topic is shoe brand detection. The aim is to detect three shoe brands: adidas, converse, nike",
+    `<img src=\"pic3.png\" class=\"content_pic\">
+    <p>These are the testing pictures of the project after data generator</p>`,
+    "The purpose of the data generator is to create batches of preprocessed and augmented images to be used for training a deeper learning model.",
+    `<img src=\"pic4.png\" class=\"content_pic\">
+    <p>This the accuracy of my model in the project </p>`,
+    `<img src=\"pic5.png\" class=\"content_pic\">
+    <p>And this is the data loss of my model</p>` 
+  ];
+  
+  function toggleVRInterviewText() {
+  const vrInterviewTextElement = document.getElementById("vr-interview-text");
+  vrInterviewTextIndex = (vrInterviewTextIndex + 1) % vrInterviewTexts.length;
+  vrInterviewTextElement.innerHTML = vrInterviewTexts[vrInterviewTextIndex];
+  }
+
+  function toggleResumeParserText() {
+  const resumeParserTextElement = document.getElementById("resume-parser-text");
+  resumeParserTextIndex = (resumeParserTextIndex + 1) % resumeParserTexts.length;
+  resumeParserTextElement.innerHTML = resumeParserTexts[resumeParserTextIndex];
+  }
+
+  function toggleClassificationText() {
+  const classificationTextElement = document.getElementById("classification-text");
+  classificationTextIndex = (classificationTextIndex + 1) % classificationTexts.length;
+  classificationTextElement.innerHTML = classificationTexts[classificationTextIndex];
+  }
+
+document.querySelectorAll(".section.expand-on-hover").forEach((section) => {
+  section.addEventListener("mouseenter", () => {
+    const vrInterviewTextElement = document.getElementById("vr-interview-text");
+    vrInterviewTextElement.textContent = vrInterviewTexts[0];
+    vrInterviewTextIndex = 0;
+
+    const resumeParserTextElement = document.getElementById("resume-parser-text");
+    resumeParserTextElement.textContent = resumeParserTexts[0];
+    resumeParserTextIndex = 0;
+
+    const classificationTextElement = document.getElementById("classification-text");
+    classificationTextElement.textContent = classificationTexts[0];
+    classificationTextIndex = 0;
+  });
+});
+
+
+  </script>
+</body>
+</html>
